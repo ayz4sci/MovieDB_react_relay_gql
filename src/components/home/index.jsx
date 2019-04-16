@@ -1,7 +1,19 @@
 import React from 'react';
+import TopBar from '../topbar/topbar';
+import Filter from '../filter/filter.js';
+import Dashboard from '../Dashboard/dashboard.js';
+import Footer from '../Footer/footer.js';
+import './home.scss';
 
 const Home = () => (
-  <h1>Hello, MovieDB React Relay GQL App!</h1>
+  <div className='content'>
+    <TopBar />
+    <div className='main-content'>
+      <Filter />
+      <Dashboard />
+    </div>
+    <Footer />
+  </div>
 );
 
 export default Home;

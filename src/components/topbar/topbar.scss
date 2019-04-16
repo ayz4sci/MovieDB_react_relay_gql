@@ -1,0 +1,37 @@
+.topbar{
+    height: 100px;
+    border-bottom: 1px solid #00c0ff;
+}
+.topbar-content{
+    display: flex;
+    justify-content: space-around;
+    width: 80vw;
+    height: 100px;
+    margin: 0 auto;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+img{
+    height: 65px;
+    width: 65px;
+}
+.search-form input{
+    border: 1px solid gray;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background: transparent;
+    width: 35vw;
+    margin-top: 40px;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #3e3e3e;
+    margin-right: 25px;
+}
+
+.search-form button{
+    width: 100px;
+}

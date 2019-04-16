@@ -5,6 +5,7 @@ import environment from "./environment";
 import Home from "./components/home/index.jsx";
 
 import styles from "./styles.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const home = (
   <QueryRenderer
