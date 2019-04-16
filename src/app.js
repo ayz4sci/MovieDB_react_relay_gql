@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from "./styles.css";
 
-const hello = <h1>Hello, react!</h1>;
+import Home from './components/home/index.jsx';
+
 ReactDOM.render(
-  hello,
+  <Home />,
   document.getElementById('root')
 );
