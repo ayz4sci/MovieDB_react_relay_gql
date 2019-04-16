@@ -17,3 +17,6 @@ pre-commit.old
 
 # hooks
 hooks/*.sample
+
+#artifacts
+__generated__/

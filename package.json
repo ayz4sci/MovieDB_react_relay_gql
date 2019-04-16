@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
-    "lint": "eslint --fix ./src/**/*.js ./src/**/*.jsx",
-    "setup:hooks": "sh ./setup_hooks.sh"
+    "lint": "eslint --fix ./src/**/*.js",
+    "setup:hooks": "sh ./setup_hooks.sh",
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx"
   },
   "husky": {
     "hooks": {
@@ -19,28 +20,34 @@
   "author": "Ayoola",
   "license": "ISC",
   "dependencies": {
+    "babel-eslint": "^10.0.1",
     "express": "^4.16.4",
+    "get-graphql-schema": "^2.1.2",
     "nodemon": "^1.18.11",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-relay": "^3.0.0",
+    "relay-runtime": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-relay": "^3.0.0",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "graphql": "^14.2.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.3.1",
     "mini-css-extract-plugin": "^0.6.0",
+    "relay-compiler": "^3.0.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
