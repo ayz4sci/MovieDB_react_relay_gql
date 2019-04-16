@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
-    "lint": "eslint --fix ./public/**/*.js",
+    "lint": "eslint --fix ./src/**/*.js",
     "setup:hooks": "sh ./setup_hooks.sh",
     "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx"
   },

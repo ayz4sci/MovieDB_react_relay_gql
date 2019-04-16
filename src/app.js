@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import styles from "./styles.css";
 import {graphql, QueryRenderer} from 'react-relay';
 import environment from './environment'
+import Home from './components/home/index.jsx';
 
 
-const hello =   <QueryRenderer
+const home =   <QueryRenderer
 environment={environment}
 query={graphql`
 query appQuery {
@@ -26,12 +27,13 @@ render={({error, props}) => {
     return <div>Error!</div>
   }
   else if (props) {
-    return <h1>hello, react</h1>
+    return <Home />
   } 
   return <div>Loading...</div>
 }}
 />
+
 ReactDOM.render(
-  hello,
+  home,
   document.getElementById('root')
 );
