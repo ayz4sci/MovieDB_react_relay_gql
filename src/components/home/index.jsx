@@ -6,9 +6,9 @@ import Footer from '../Footer/footer.js';
 import './home.scss';
 
 const Home = () => (
-  <div className='content'>
+  <div className="content">
     <TopBar />
-    <div className='main-content'>
+    <div className="main-content">
       <Filter />
       <Dashboard />
     </div>
@@ -17,4 +17,3 @@ const Home = () => (
 );
 
 export default Home;
-
