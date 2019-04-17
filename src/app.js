@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { graphql, QueryRenderer } from "react-relay";
 import environment from "./environment";
-import Home from "./components/home/index.jsx";
+import Home from "./components/home/index";
 
 import styles from "./styles.css";
 
