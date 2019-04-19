@@ -1,0 +1,29 @@
+.job-card{
+    
+    height: 15rem;
+    width: 10rem;
+    border-radius: 5px;
+    background-color: #fcfcfd;
+    box-sizing: content-box;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    line-height: 1;
+    .card-image{
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+    }
+    .company-name{
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: capitalize;
+    }
+    .job-title{
+        font-size: 11px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: capitalize;
+        color: green;
+    }
+}

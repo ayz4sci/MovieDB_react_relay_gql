@@ -1,0 +1,9 @@
+.movies-container{
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: scroll;
+    width: 70%;
+    height: 500px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}

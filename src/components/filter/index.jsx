@@ -5,7 +5,7 @@ import {
 import './filter.scss';
 
 const Filter = () => (
-  <div>
+  <div className="filters">
     <h2> Filters </h2>
   </div>
 );

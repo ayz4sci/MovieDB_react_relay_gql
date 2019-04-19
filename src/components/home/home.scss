@@ -5,10 +5,29 @@
     min-height: 100vh;
 }
 .main-content{
-    display: flex;
     width: 80vw;
     margin: auto;
     justify-content: space-around;
+    height:-webkit-fill-available;
+    .content-headers{
+        display: flex;
+        border-bottom: 1px solid black;
+        height: 50px;
+        .filters-header{
+            width: 30%;
+        }
+        .jobs-header{
+            width: 70%;
+        }
+        .header{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+        
+    }
+    .content-group{
+        display: flex;
+    }
 }
 h2{
     text-align: center;

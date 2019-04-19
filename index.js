@@ -1,8 +1,14 @@
-const express = require('express');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route } from 'react-router';
+import { createBrowserHistory } from 'history';
+import App from './src/app';
 
-const app = express();
+const history = createBrowserHistory();
 
-app.use(express.static('dist'));
-
-app.listen(5000);
-console.log("Server is running on http://localhost:5000");
+ReactDOM.render(
+  <Router history={history}>
+    <Route path="/" component={App} />
+  </Router>,
+  document.getElementById('root'),
+);
