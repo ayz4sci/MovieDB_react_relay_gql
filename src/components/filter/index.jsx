@@ -2,53 +2,56 @@
 import React, { Component } from "react";
 import { 
   Form, 
-  Button 
+  Button,
+  FormGroup,
+  Input,
+  Label
 } from "reactstrap";
-import { 
-  createFragmentContainer, 
-  graphql 
-} from 'react-relay';
-import DateInput from './dateInput.jsx';
-import GenderInput from './genderInput.jsx';
+import PropTypes from 'prop-types';
 import "./filter.scss";
 
-class Filter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      gender: "",
-      date: ""
-    };
-  }
+const Filter = ({ handleGender, gender }) => (
+  <div>
+    <div>
+      <FormGroup check>
+        <Label check>
+          <Input 
+            type="checkbox" 
+            onChange={(event) => handleGender(event.target.value)} 
+            value="female" 
+            checked={gender === "female"} 
+          /> FEMALE
+        </Label>
+      </FormGroup>
+      <FormGroup check>
+        <Label check>
+          <Input 
+            type="checkbox" 
+            value="male" 
+            onChange={(event) => handleGender(event.target.value)} 
+            checked={gender === "male"} 
+          /> MALE
+        </Label>
+      </FormGroup>
+      <FormGroup check>
+        <Label check>
+          <Input 
+            type="checkbox" 
+            value="notspecified" 
+            onChange={(event) => handleGender(event.target.value)} 
+            checked={gender === "notspecified"} 
+          /> NOT SPECCIFIED
+        </Label>
+      </FormGroup>
+    </div>
+  </div>
+);
+  
+Filter.propTypes = {
+  handleGender: PropTypes.func.isRequired,
+  gender: PropTypes.string
 
-  onChangeGender = (event) => {
-    this.setState({ gender: event.target.value });
-  }
-
-  onChangeDate = (event) => {
-    this.setState({ date: event.target.value });
-  }
-
-  onFilterSubmit = (event) => {
-    event.preventDefault();
-  }
-
-
-  render() {
-    return (
-      <div>
-        <Form onSubmit={this.onFilterSubmit}>
-          <GenderInput 
-            gender={this.state.gender} 
-            onChange={this.onChangeGender} 
-          />
-          <DateInput date={this.state.date} onChange={this.onChangeDate} />
-          <Button>Apply</Button>
-        </Form>
-      </div>
-    );
-  }
-}
+};
 
 
 export default Filter;
