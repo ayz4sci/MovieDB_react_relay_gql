@@ -12,7 +12,7 @@ const TopBar = () => (
       <div className="search-form">
         <Form>
           <FormGroup>
-            <input type="text" name="search" placeholder="search for jobs " />
+            <input type="text" name="search" placeholder="search for movie, title, year " />
             <Button type="submit" size="sm" color="primary">Search</Button>
           </FormGroup>
         </Form>

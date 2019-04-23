@@ -1,42 +1,44 @@
-const path = require('path');
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: './index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
   },
   resolve: {
     modules: ['node_modules', './src'],
     extensions: ['.js', '.jsx'],
   },
   module: {
-    rules: [{
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      use: {
-        loader: "babel-loader"
-      }
-    },
-    {
-      test: /\.html$/,
-      use: [
-        {
-          loader: "html-loader",
-          options: { minimize: true }
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
         }
-      ]
-    },
-    {
-      test: /\.s?[ac]ss$/,
-      use: [
-        MiniCssExtractPlugin.loader,
-        { loader: "css-loader" },
-        { loader: "sass-loader" }
-      ]
-    }]
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: { minimize: true }
+          }
+        ]
+      },
+      {
+        test: /\.s?[ac]ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: "css-loader" },
+          { loader: "sass-loader" }
+        ]
+      }
+    ]
   },
   plugins: [
     new HtmlWebPackPlugin({

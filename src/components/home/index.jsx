@@ -1,6 +1,6 @@
 import React from 'react';
 import TopBar from '../topbar/topbar';
-import Filter from '../Filter';
+import Filter from "../filter";
 import Dashboard from '../Dashboard';
 import Footer from '../Footer';
 import './home.scss';
