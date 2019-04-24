@@ -33,7 +33,11 @@ class Home extends React.Component {
         environment={environment}
         query={graphql`
           query homeQuery ($searchTerm: String, $gender: String) {
-            allJobs(jobTitle_Icontains: $searchTerm, before: "12/3/2020", genderMf: $gender) {
+            allJobs(
+              jobTitle_Icontains: $searchTerm,
+               before: "12/3/2020",
+              genderMf: $gender
+              ) {
               ...Dashboard_jobs
             }
           }
@@ -64,7 +68,7 @@ class Home extends React.Component {
             </div>
           </div>
           <div className="content-group">
-            <Filter handleGender={this.handleChangeGender} />
+            <Filter gender={gender} handleGender={this.handleChangeGender} />
             {DashboardQueryRenderer}
           </div>
         </div>
