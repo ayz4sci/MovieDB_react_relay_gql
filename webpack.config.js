@@ -13,31 +13,35 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
+    rules: [{
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader",
+        query: {
+          plugins: [
+            'transform-class-properties'
+          ]
         }
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader",
-            options: { minimize: true }
-          }
-        ]
-      },
-      {
-        test: /\.s?[ac]ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          { loader: "css-loader" },
-          { loader: "sass-loader" }
-        ]
       }
+    },
+    {
+      test: /\.html$/,
+      use: [
+        {
+          loader: "html-loader",
+          options: { minimize: true }
+        }
+      ]
+    },
+    {
+      test: /\.s?[ac]ss$/,
+      use: [
+        MiniCssExtractPlugin.loader,
+        { loader: "css-loader" },
+        { loader: "sass-loader" }
+      ]
+    }
     ]
   },
   plugins: [

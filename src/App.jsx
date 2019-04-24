@@ -6,30 +6,9 @@ import Home from "./components/home";
 
 import styles from "./styles.css";
 
-const allJobs = graphql`
-  query AppJobsQuery {
-    allJobs(before: "12/3/2020") {
-      ...Dashboard_jobs
-  }
-}
-`;
 class App extends React.Component { 
   render() {
-    return (
-      <QueryRenderer
-        environment={environment}
-        query={allJobs}
-        render={({ error, props }) => {
-          if (error) {
-            return <div>Error!</div>;
-          }  
-          if (props) {
-            return <Home jobs={props.allJobs} />;
-          }
-          return <div>Loading...</div>;
-        }}
-      />
-    );
+    return <Home />;
   }
 }
 
