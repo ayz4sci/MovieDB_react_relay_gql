@@ -20,7 +20,6 @@ const TopBar = ({ handleSearch }) => (
                 handleSearch(event.target.value);
               }}
             />
-            <Button type="submit" size="sm" color="primary">Search</Button>
           </FormGroup>
         </Form>
       </div>
