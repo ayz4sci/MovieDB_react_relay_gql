@@ -13,7 +13,7 @@ import './home.scss';
 class Home extends React.Component {
   state = {
     searchTerm: "",
-    gender: "",
+    gender: ""
   }
   
   handleSubmit = (searchTerm) => {
@@ -28,14 +28,16 @@ class Home extends React.Component {
 
   render() {
     const { searchTerm, gender } = this.state;
+
     const DashboardQueryRenderer = (
       <QueryRenderer
         environment={environment}
         query={graphql`
+
           query homeQuery ($searchTerm: String, $gender: String) {
             allJobs(
               jobTitle_Icontains: $searchTerm,
-               before: "12/3/2020",
+              before: "12/3/2020",
               genderMf: $gender
               ) {
               ...Dashboard_jobs
