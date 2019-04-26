@@ -18,8 +18,8 @@ class Job extends React.Component {
     return (
       <div className="job-card">
         {genderMf === 'FEMALE'
-          ? <img className="card-image" alt="" src="https://www.shareicon.net/download/2015/10/04/112039_man.svg" /> 
-          : <img className="card-image" alt="" src="https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-14-512.png" />}
+          ? <img className="card-image" alt="" src="https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-14-512.png" /> 
+          : <img className="card-image" alt="" src="https://www.shareicon.net/download/2015/10/04/112039_man.svg" />}
         <div>
           <h1 className="company-name">{companyName}</h1>
           <h1 className="job-title">{jobTitle}</h1>

@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import React from 'react';
 import { graphql, QueryRenderer } from "react-relay";
 
@@ -11,28 +12,39 @@ import './home.scss';
 
 class Home extends React.Component {
   state = {
-    searchTerm: ""
+    searchTerm: "",
+    gender: ""
   }
   
   handleSubmit = (searchTerm) => {
     this.setState({ searchTerm });
   };
 
+  handleChangeGender = gender => {
+    this.setState({ gender });
+  }
+
   delayedHandleSubmit = _.debounce(this.handleSubmit, 300);
 
   render() {
-    const { searchTerm } = this.state;
+    const { searchTerm, gender } = this.state;
+
     const DashboardQueryRenderer = (
       <QueryRenderer
         environment={environment}
         query={graphql`
-          query homeQuery ($searchTerm: String) {
-            allJobs(jobTitle_Icontains: $searchTerm, before: "12/3/2020") {
+
+          query homeQuery ($searchTerm: String, $gender: String) {
+            allJobs(
+              jobTitle_Icontains: $searchTerm,
+              before: "12/3/2020",
+              genderMf: $gender
+              ) {
               ...Dashboard_jobs
             }
           }
         `}
-        variables={{ searchTerm }}
+        variables={{ searchTerm, gender }}
         render={({ error, props }) => {
           if (error) {
             return <div>Error!</div>;
@@ -58,7 +70,7 @@ class Home extends React.Component {
             </div>
           </div>
           <div className="content-group">
-            <Filter />
+            <Filter gender={gender} handleGender={this.handleChangeGender} />
             {DashboardQueryRenderer}
           </div>
         </div>
